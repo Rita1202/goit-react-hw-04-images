@@ -15,7 +15,6 @@ export const App = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [totalHits, setTotalHits] = useState(0);
-  const [error, setError] = useState('');
   const [currentImage, setCurrentImage] = useState(null);
 
   useEffect(() => {
@@ -42,7 +41,6 @@ export const App = () => {
       })
       .catch(error => {
         Notiflix.Notify.failure('Error');
-        setError(error);
       })
       .finally(() => {
         setLoading(false);
